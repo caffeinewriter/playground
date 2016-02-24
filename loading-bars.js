@@ -1,3 +1,5 @@
+var colors = require('colors/safe');
+var progs = ['red', 'yellow', 'green', 'blue', 'magenta', 'rainbow'];
 var mode = process.argv[2];
 switch (mode) {
   case 'slash-spinner':
@@ -24,10 +26,10 @@ switch (mode) {
   case 'shaded':
   default:
     var p = 0;
-    var delBar = "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b";
+    var delBar = "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b";
     var full = '█';
     var chars = ['-', '░', '▒', '▓']
-    process.stdout.write('[-------------------------]');
+    process.stdout.write(colors.red('[-------------------------]   0%'));
     function addProgress() {
       p = p + Math.floor(Math.random() * 5);
       p = p <= 100 ? p : 100;
@@ -42,7 +44,7 @@ switch (mode) {
           temp = 0;;
         }
       }
-      process.stdout.write(delBar + '[' + prog + ']');
+      process.stdout.write(delBar + colors[progs[Math.min(Math.floor(p / (100/progs.length)), progs.length - 1)]]('[' + prog + '] ' + ('   ' + p).slice(-3) + '%'));
       next();
     }
     function next() {

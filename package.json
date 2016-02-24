@@ -1,0 +1,21 @@
+{
+  "name": "caffeinewriter-playground",
+  "version": "0.0.1",
+  "description": "Just some scripts that don't really fit anywhere else.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caffeinewriter/playground.git"
+  },
+  "author": "caffeinewriter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/caffeinewriter/playground/issues"
+  },
+  "homepage": "https://github.com/caffeinewriter/playground#readme",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}
